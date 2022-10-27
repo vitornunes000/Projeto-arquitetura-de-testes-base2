@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Random;
 
 //import org.apache.commons.io.FileUtils;
 //import org.testng.ITestResult;
@@ -44,4 +45,31 @@ public class Utils {
 
         return sb.toString();
     }
+    public static void main(String[] args){
+        //cria uma string para todos os caracteres
+        String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+        //criador de string aleatoria
+        StringBuilder sb = new StringBuilder();
+
+        // cria um objeto para a string aleatoria
+        Random random = new Random();
+
+        // especifica o tamanho da string
+        int length = 7;
+        for(int i =0; i < length; i++){
+            //gerador randomico de indice
+            int index = random.nextInt(alphabet.length());
+
+            //
+            char randomChar = alphabet.charAt(index);
+
+            sb.append(randomChar);
+            return sb.ToString();
+        }
+
+    }
 }
+
+
+
