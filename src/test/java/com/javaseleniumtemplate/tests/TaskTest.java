@@ -24,8 +24,8 @@ public class TaskTest extends TestBase {
         //parameters
         String Resumo = "teste automatizado bliberebe";
         String descricao = "verificar se tarefa foi excluida";
-        String Filtro = "teste automatizado";
-        String numeroTarefas = " 0 - 0 / 0";
+        String Filtro = "teste automatizado blibere";
+        String numeroTarefas = "0 - 0 / 0";
         String usuario = GlobalParameters.USUARIO;
         String senhaCorreta = GlobalParameters.SENHACORRETA;
 
@@ -45,6 +45,6 @@ public class TaskTest extends TestBase {
         taskPage.clicarEmAplicarFiltro();
         taskPage.retornaNumeroDeTarefas();
 
-        Assert.assertTrue(taskPage.retornaNumeroDeTarefas().equals(numeroTarefas));
+        Assert.assertEquals(numeroTarefas,taskPage.retornaNumeroDeTarefas() );
     }
 }
