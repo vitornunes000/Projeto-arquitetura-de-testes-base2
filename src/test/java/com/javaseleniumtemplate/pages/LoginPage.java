@@ -12,6 +12,7 @@ public class LoginPage extends PageBase {
     By errorMessageLabel = By.xpath("//*[@id=\"main-container\"]/div/div/div/div/div[4]");
 
     By loginButton2 = By.xpath("//*[@id=\"login-form\"]/fieldset/input[3]");
+    By nameSpace = By.xpath("//*[@id=\"navbar-container\"]/div[2]/ul/li[3]/a/span");
 
     //Actions
     public void preenhcerUsuario(String usuario){
@@ -35,5 +36,8 @@ public class LoginPage extends PageBase {
 
     public String retornaMensagemErroLogin(){
         return getText(errorMessageLabel);
+    }
+    public String retornaNomeContaUsuario(){
+        return getText(nameSpace);
     }
 }

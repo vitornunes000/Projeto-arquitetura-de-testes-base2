@@ -17,6 +17,7 @@ public class TaskPage extends PageBase {
     By filterAplyfield = By.xpath("//*[@id=\"filters_form_open\"]/div[2]/div/div/input[2]");//clicar
     By counterTaskfield = By.xpath("//*[@id=\"bug_action\"]/div/div[1]/h4/span");//clicar
 
+
     //ACTIONS
     public void clicarEmCriarTarefa(){
         click(TaskCreatefield);
@@ -52,4 +53,5 @@ public class TaskPage extends PageBase {
     public String retornaNumeroDeTarefas(){
         return getText(counterTaskfield);
     }
+
 }
