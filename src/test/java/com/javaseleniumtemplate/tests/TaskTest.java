@@ -1,12 +1,14 @@
 package com.javaseleniumtemplate.tests;
+import com.javaseleniumtemplate.GlobalParameters;
 import com.javaseleniumtemplate.bases.TestBase;
+import com.javaseleniumtemplate.flows.LoginFlows;
 import com.javaseleniumtemplate.pages.LoginPage;
 import com.javaseleniumtemplate.pages.TaskPage;
 import com.javaseleniumtemplate.utils.Utils;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class TaskTest extends TaskPage {
+public class TaskTest extends TestBase {
     //OBJECTS
     TaskPage taskPage;
 
@@ -16,16 +18,23 @@ public class TaskTest extends TaskPage {
 
         //Objects instances
         taskPage = new TaskPage();
-        Object utils = new Utils();
+       //Object utils = new Utils();
+        LoginFlows loginFlows = new LoginFlows();
 
         //parameters
-        String Resumo = utils.toString()
+        String Resumo = "teste automatizado bliberebe";
         String descricao = "verificar se tarefa foi excluida";
         String Filtro = "teste automatizado";
         String numeroTarefas = " 0 - 0 / 0";
+        String usuario = GlobalParameters.USUARIO;
+        String senhaCorreta = GlobalParameters.SENHACORRETA;
+
+        //LOGIN
+        loginFlows.efetuarLogin(usuario,senhaCorreta);
 
         //Tests
         taskPage.clicarEmCriarTarefa();
+        taskPage.clicarEmSelecionar();
         taskPage.preencherResumo(Resumo);
         taskPage.preencherDescricao(descricao);
         taskPage.clicarEmFinalizar();
@@ -36,6 +45,6 @@ public class TaskTest extends TaskPage {
         taskPage.clicarEmAplicarFiltro();
         taskPage.retornaNumeroDeTarefas();
 
-        Assert.assertTrue(taskPage.retornaNumeroDeTarefas().contains(numeroTarefas));
+        Assert.assertTrue(taskPage.retornaNumeroDeTarefas().equals(numeroTarefas));
     }
 }

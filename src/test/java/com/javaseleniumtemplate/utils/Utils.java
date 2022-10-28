@@ -45,7 +45,7 @@ public class Utils {
 
         return sb.toString();
     }
-    public static void main(String[] args){
+    /*public static  main(String[] args){
         //cria uma string para todos os caracteres
         String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
@@ -65,11 +65,11 @@ public class Utils {
             char randomChar = alphabet.charAt(index);
 
             sb.append(randomChar);
-            return sb.ToString();
-        }
+            return sb.toString();
+        }*/
 
     }
-}
+
 
 
 

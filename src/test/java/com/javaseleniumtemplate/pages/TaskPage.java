@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 public class TaskPage extends PageBase {
     //MAPPING
     By TaskCreatefield = By.xpath("//*[@id=\"navbar-container\"]/div[2]/ul/li[1]/div/a");
+    By selectProjectField = By.xpath("//*[@id=\"select-project-form\"]/div/div[2]/div[2]/input");
     By resumeField = By.id("summary");
     By descriptionField = By.id("description");
     By createNewField = By.xpath("//*[@id=\"report_bug_form\"]/div/div[2]/div[2]/input");
@@ -20,6 +21,10 @@ public class TaskPage extends PageBase {
     public void clicarEmCriarTarefa(){
         click(TaskCreatefield);
     }
+    public void clicarEmSelecionar(){
+        click(selectProjectField);
+    }
+
     public void preencherResumo(String Resumo){
         sendKeys(resumeField, Resumo);
     }

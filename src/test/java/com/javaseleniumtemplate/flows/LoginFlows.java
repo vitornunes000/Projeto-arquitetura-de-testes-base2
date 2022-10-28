@@ -12,10 +12,11 @@ public class LoginFlows {
     }
 
     //Flows
-    public void efetuarLogin(String usuario, String senha){
+    public void efetuarLogin(String usuario, String senhaCorreta){
         //loginPage.clicarEmAceitarCookies();
         loginPage.preenhcerUsuario(usuario);
-        loginPage.preencherSenha(senha);
         loginPage.clicarEmLogin();
+        loginPage.preencherSenha(senhaCorreta);
+        loginPage.clicarEmLoginnew();
     }
 }
