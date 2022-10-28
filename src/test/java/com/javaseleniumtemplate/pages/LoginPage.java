@@ -18,8 +18,8 @@ public class LoginPage extends PageBase {
         sendKeys(usernameField, usuario);
     }
 
-    public void preencherSenha(String senha){
-        sendKeys(passwordField, senha);
+    public void preencherSenha(String senhaCorreta){
+        sendKeys(passwordField, senhaCorreta);
     }
 
     public void clicarEmLogin(){
