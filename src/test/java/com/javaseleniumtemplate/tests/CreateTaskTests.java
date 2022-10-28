@@ -45,7 +45,7 @@ public class CreateTaskTests extends TestBase {
     }
 
     @Test
-    public void criarTarefaComFalha(){
+    public void criarTarefaSemSucesso(){
 
         //Objects instances
         loginPage = new LoginPage();
@@ -57,6 +57,7 @@ public class CreateTaskTests extends TestBase {
         String atribuicao = "eduardoberlatto";
         String resumo = "testeEdu";
         String infoAdicional = "Nenhuma informação adicional a declarar";
+        String mensagemSucessoNaoEsperada = "Operação realizada com sucesso.";
 
         //Test
         loginPage.preenhcerUsuario(usuario);
@@ -69,7 +70,7 @@ public class CreateTaskTests extends TestBase {
         createTaskPage.preencherInfoAdicional(infoAdicional);
         createTaskPage.clicarEmCriar();
 
-        Assert.assertEquals("", "");
+        Assert.assertNotEquals(mensagemSucessoNaoEsperada, "");
     }
 
 }
