@@ -30,6 +30,6 @@ public class TaskTest extends TaskPage {
         taskPage.clicarEmVerTarefas();
         taskPage.preencherfiltro(Filtro);
         taskPage.clicarEmAplicarFiltro();
-        taskPage.retornaNumeroDeTarefas()
+        taskPage.retornaNumeroDeTarefas();
     }
 }
